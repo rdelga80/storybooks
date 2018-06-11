@@ -1,0 +1,19 @@
+{
+  "name": "storybooks",
+  "version": "1.0.0",
+  "description": "\u001b[A\u001b[A\u001b[B\u001b[BAn app to share private stories",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "rdelga80"
+  },
+  "author": "Ricardo Delgado <ricdelgado80@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4"
+  }
+}
