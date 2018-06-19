@@ -5,15 +5,25 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
   <title>Storybooks</title>
 </head>
 <body>
   {{> _header }}
+
+  {{# if user }}
+    {{> _add-btn }}
+  {{ else }}
+
+  {{/ if }}
+
   <main>
     <div class="container">
       {{{ body }}}
     </div>
   </main>
+  {{> _footer }}
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -24,7 +34,12 @@
   <script>
     $(document).ready(() => {
       $('.sidenav').sidenav();
+      $('select').formSelect();
     });
+
+    CKEDITOR.replace('body', ({
+      plugins: 'wysiwygarea,toolbar,basicstyles,link'
+    }))
   </script>
 </body>
 </html>
